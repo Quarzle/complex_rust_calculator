@@ -2,7 +2,6 @@
 # Contains all compiled binaries, dependencies, and build intermediate files
 /target/
 
-# Remove this macro line if you intentionally want to check in your debug symbols
 # MSVC Windows build debugging files
 *.pdb
 
