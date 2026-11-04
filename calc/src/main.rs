@@ -1,7 +1,3 @@
-// future notes:
-// Make an equation solver
-// also double check if the amount of rounding is suitable
-
 use std::fmt;
 use std::io::{self, Write};
 use std::env;
