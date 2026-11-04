@@ -45,11 +45,7 @@ impl Calculator {
         if !is_valid_variable_name(&name) {
             return Err("Invalid variable name".to_string());
         }
-
-        if is_reserved_name(&name) {
-            return Err(format!("'{}' is a reserved name", name));
-        }
-
+		
         self.variables.insert(name, value);
 
         Ok(())
@@ -697,8 +693,19 @@ fn is_valid_variable_name(name: &str) -> bool {
         _ => return false,
     }
 
-    chars.all(|c| c.is_alphanumeric() || c == '_')
+    if !chars.all(|c| c.is_alphanumeric() || c == '_') {
+        return false;
+    }
+
+    !matches!(
+        name,
+        "pi" | "phi" | "e" | "i" | "ans"
+            | "sqrt" | "sin" | "cos" | "tan"
+            | "asin" | "acos" | "atan" | "abs"
+            | "re" | "im" | "cis" | "ln"
+    )
 }
+
 
 // Evaluates an expression or assigns a variable.
 pub fn evaluate(
@@ -720,18 +727,6 @@ pub fn evaluate(
 
         if expression.is_empty() {
             return Err("Expected an expression after '='".to_string());
-        }
-
-        // Prevent overwriting built-in constants and functions.
-		// This code only shows the user an error; as built ins are parsed first they can never be reassigned
-        if matches!(
-            name.as_str(),
-            "pi" | "phi" | "e" | "i" | "ans"
-                | "sqrt" | "sin" | "cos" | "tan"
-                | "asin" | "acos" | "atan" | "abs"
-                | "re" | "im" | "cis" | "ln"
-        ) {
-            return Err(format!("'{}' is a reserved name", name));
         }
 
         // Evaluate before storing, so failed assignments don't overwrite
