@@ -1,0 +1,91 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on shared package cache
+   0.026497000s  INFO prepare_target{force=false package_id=calc-cli v0.1.0 (C:\Users\lachi\Documents\GitHub\calc\calc-cli) target="calc-cli"}: cargo::core::compiler::fingerprint: fingerprint error for calc-cli v0.1.0 (C:\Users\lachi\Documents\GitHub\calc\calc-cli)/Check { test: false }/TargetInner { name: "calc-cli", doc: true, ..: with_path("C:\\Users\\lachi\\Documents\\GitHub\\calc\\calc-cli\\src\\main.rs", Edition2024) }
+   0.026552400s  INFO prepare_target{force=false package_id=calc-cli v0.1.0 (C:\Users\lachi\Documents\GitHub\calc\calc-cli) target="calc-cli"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lachi\Documents\GitHub\calc\calc-cli\target\debug\.fingerprint\calc-cli-d448bd984b4b217d\bin-calc-cli`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+   0.041038500s  INFO prepare_target{force=false package_id=complex_calc v0.1.0 (C:\Users\lachi\Documents\GitHub\calc\complex_calc) target="complex_calc"}: cargo::core::compiler::fingerprint: fingerprint error for complex_calc v0.1.0 (C:\Users\lachi\Documents\GitHub\calc\complex_calc)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("complex_calc", ["lib"], "C:\\Users\\lachi\\Documents\\GitHub\\calc\\complex_calc\\src\\lib.rs", Edition2024) }
+   0.041082500s  INFO prepare_target{force=false package_id=complex_calc v0.1.0 (C:\Users\lachi\Documents\GitHub\calc\complex_calc) target="complex_calc"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lachi\Documents\GitHub\calc\calc-cli\target\debug\.fingerprint\complex_calc-cd41b6104bcbb271\lib-complex_calc`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_libgit2_prerelease
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.041870000s  INFO prepare_target{force=false package_id=calc-cli v0.1.0 (C:\Users\lachi\Documents\GitHub\calc\calc-cli) target="calc-cli"}: cargo::core::compiler::fingerprint: fingerprint error for calc-cli v0.1.0 (C:\Users\lachi\Documents\GitHub\calc\calc-cli)/Check { test: true }/TargetInner { name: "calc-cli", doc: true, ..: with_path("C:\\Users\\lachi\\Documents\\GitHub\\calc\\calc-cli\\src\\main.rs", Edition2024) }
+   0.041910000s  INFO prepare_target{force=false package_id=calc-cli v0.1.0 (C:\Users\lachi\Documents\GitHub\calc\calc-cli) target="calc-cli"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\lachi\Documents\GitHub\calc\calc-cli\target\debug\.fingerprint\calc-cli-5b2a439f8601dc27\test-bin-calc-cli`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+    Checking complex_calc v0.1.0 (C:\Users\lachi\Documents\GitHub\calc\complex_calc)
+    Checking calc-cli v0.1.0 (C:\Users\lachi\Documents\GitHub\calc\calc-cli)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.47s
