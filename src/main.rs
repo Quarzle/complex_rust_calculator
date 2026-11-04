@@ -45,18 +45,22 @@ pub struct Complex {
 }
 
 impl Complex {
+	// Create a new complex number with the inputs
     fn new(re: f64, im: f64) -> Self {
         Self { re, im }
     }
 
+	// create a new real number
     fn real(value: f64) -> Self {
         Self::new(value, 0.0)
     }
 
+	// Create a new imaginary only number
     fn imaginary(value: f64) -> Self {
         Self::new(0.0, value)
     }
 
+	// Create a new complex number equal to i
     fn i() -> Self {
         Self::new(0.0, 1.0)
     }
@@ -75,7 +79,6 @@ impl Complex {
             self.re * other.im + self.im * other.re,
         )
     }
-
 	
 	fn div(self, other: Self) -> Result<Self, String> {
 		let a = self.re;
@@ -236,7 +239,7 @@ impl fmt::Display for Complex {
         let im = if self.im.abs() < 1e-12 { 0.0 } else { self.im };
 
         if im == 0.0 {
-            return write!(f, "{}", format!("{:.16}", re).trim_end_matches('0').trim_end_matches('.'));
+            return write!(f, "{}", format!("{:.14}", re).trim_end_matches('0').trim_end_matches('.'));
         }
 
         if re == 0.0 {
@@ -246,19 +249,19 @@ impl fmt::Display for Complex {
             if im == -1.0 {
                 return write!(f, "-i");
             }
-            return write!(f, "{}i", format!("{:.16}", im).trim_end_matches('0').trim_end_matches('.'));
+            return write!(f, "{}i", format!("{:.14}", im).trim_end_matches('0').trim_end_matches('.'));
         }
 
         if im < 0.0 {
             if im == -1.0 {
-                write!(f, "{} - i", format!("{:.16}", re).trim_end_matches('0').trim_end_matches('.'))
+                write!(f, "{} - i", format!("{:.14}", re).trim_end_matches('0').trim_end_matches('.'))
             } else {
-                write!(f, "{} - {}i", format!("{:.16}", re).trim_end_matches('0').trim_end_matches('.'), format!("{:.16}", -im).trim_end_matches('0').trim_end_matches('.'))
+                write!(f, "{} - {}i", format!("{:.14}", re).trim_end_matches('0').trim_end_matches('.'), format!("{:.16}", -im).trim_end_matches('0').trim_end_matches('.'))
             }
         } else if im == 1.0 {
-            write!(f, "{} + i", format!("{:.16}", re).trim_end_matches('0').trim_end_matches('.'))
+            write!(f, "{} + i", format!("{:.14}", re).trim_end_matches('0').trim_end_matches('.'))
         } else {
-            write!(f, "{} + {}i", format!("{:.16}", re).trim_end_matches('0').trim_end_matches('.'), format!("{:.16}", im).trim_end_matches('0').trim_end_matches('.'))
+            write!(f, "{} + {}i", format!("{:.14}", re).trim_end_matches('0').trim_end_matches('.'), format!("{:.16}", im).trim_end_matches('0').trim_end_matches('.'))
         }
     }
 }
